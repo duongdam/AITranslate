@@ -10,7 +10,6 @@ extension MainRouterExtension on BuildContext {
       GoRouter.of(this).go(RouterPage.home.navPath, extra: {
         'popBackType': refresh,
       });
-  void toAuth() => GoRouter.of(this).go(RouterPage.user.navPath);
 
   Future<dynamic> pushDialog({
     required String routerPath,
@@ -30,7 +29,6 @@ extension GoRouterExtension on GoRouter {
   }
 
   void toHome() => go(RouterPage.home.navPath);
-  void toAuth() => go(RouterPage.user.navPath);
 }
 
 extension GoRouterStateExtensions on GoRouterState {

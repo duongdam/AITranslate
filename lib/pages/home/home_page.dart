@@ -16,19 +16,23 @@ class HomePageView extends StatelessWidget {
   }
 
   Widget _buildPage(BuildContext context) {
-    final cubit = BlocProvider.of<HomeCubit>(context);
-
-    return Column(
-      children: [
-        ElevatedButton(
-          onPressed: () {},
-          child: const Text('Go to User Page'),
-        ),
-        ElevatedButton(
-          onPressed: () {},
-          child: const Text('Go to Purchase Page'),
-        ),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('AI Translate'),
+      ),
+      body: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          return const Center(
+            child: Text(
+              'Welcome to AI Translate!',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 }

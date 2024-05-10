@@ -86,8 +86,7 @@ class _AppPageState extends State<AppPage> {
                       width: mediaQueryData.size.width,
                       child: MediaQuery(
                         data: mediaQueryData.copyWith(
-                          textScaler: mediaQueryData.textScaler
-                              .clamp(minScaleFactor: 1.0, maxScaleFactor: 1.3),
+                          textScaler: mediaQueryData.textScaler.clamp(minScaleFactor: 1.0, maxScaleFactor: 1.3),
                         ),
                         child: child!,
                       )),

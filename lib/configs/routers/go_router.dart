@@ -1,10 +1,10 @@
+import 'package:AITranslate/pages/home/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:AITranslate/base/app_page.dart';
 import 'package:AITranslate/configs/routers/go_page_transition.dart';
 import 'package:AITranslate/configs/routers/go_router_extension.dart';
 import 'package:AITranslate/configs/routers/go_router_ultils.dart';
 import 'package:AITranslate/configs/routers/navigator_observer.dart';
-import 'package:AITranslate/pages/home/home_view.dart';
 import 'package:AITranslate/pages/not_found/not_found_page.dart';
 import 'package:go_router/go_router.dart';
 
@@ -28,10 +28,7 @@ class AppRouter {
           debugPrint('routeName: $routeName');
           switch (routeName) {
             case '/home':
-            case '/home/user':
-            case '/home/purchase':
               break;
-
             default:
               break;
           }
@@ -47,7 +44,7 @@ class AppRouter {
           GoRoute(
             name: RouterPage.root.routerName,
             path: RouterPage.root.routerName,
-            builder: (context, state) => const SizedBox(),
+            builder: (context, state) => const HomePageView(popBackType: null),
             routes: <RouteBase>[
               _homeRouter,
             ],
@@ -73,7 +70,6 @@ GoRoute _homeRouter = GoRoute(
   pageBuilder: (context, state) => buildPageWithDefaultTransition(
       context: context,
       state: state,
-      child:
-          HomePageView(popBackType: state.extraMap['popBackType'] ?? 'normal'),
+      child: HomePageView(popBackType: state.extraMap['popBackType'] ?? 'normal'),
       transition: AIPageTransition.topToBottom(child: const HomePageView(popBackType: null,))),
 );
