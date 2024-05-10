@@ -1,0 +1,5 @@
+
+enum PopBackWithType {
+  refresh,
+  normal,
+}

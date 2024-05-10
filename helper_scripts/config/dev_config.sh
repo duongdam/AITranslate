@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+ENV="dev" ./config.sh                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
